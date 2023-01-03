@@ -1,6 +1,8 @@
 # ExtremeRoles.Benchmark
+JP: このリポジトリはExRやAmongUsのModdingのコードのベンチを行ったコードとその結果を管理するリポジトリです
 
-## �v���W�F�N�g�FNET6
+
+## プロジェクト：NET6
 - Framework
   - .NET 6.0
 - C# Version
@@ -9,10 +11,10 @@
   - be.663
 - ExR Major Version
   - None(WIP Now)
-- Result
+- [Result](https://github.com/yukieiji/ExtremeRoles.Benchmark/blob/main/Result/.NET6/OptionAccessBenchmark.md)
 
-## �v���W�F�N�g�FNETStandard2
+## プロジェクト：NETStandard2
 - Framework
   - .NET Standard 2.1
 - ExR Major Version
-  - Extreme Roles v3 �` Extreme Roles v5�iCurrent Supporting�j
+  - Extreme Roles v3 ～ Extreme Roles v5（Current Supporting）
