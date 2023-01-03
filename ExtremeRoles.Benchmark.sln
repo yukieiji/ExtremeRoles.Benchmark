@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6", "Net6\NET6.csproj", "{BD83E78C-78E7-4C42-A737-456161904BA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET7", "Net7\NET7.csproj", "{44460911-F4B1-48B6-93AC-9D80FF38859E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETStandard2", "NETStandard2\NETStandard2.csproj", "{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD83E78C-78E7-4C42-A737-456161904BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD83E78C-78E7-4C42-A737-456161904BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD83E78C-78E7-4C42-A737-456161904BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD83E78C-78E7-4C42-A737-456161904BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44460911-F4B1-48B6-93AC-9D80FF38859E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44460911-F4B1-48B6-93AC-9D80FF38859E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44460911-F4B1-48B6-93AC-9D80FF38859E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44460911-F4B1-48B6-93AC-9D80FF38859E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
