@@ -1,4 +1,6 @@
 # ExtremeRoles.Benchmark
+JP: このリポジトリはExRやAmongUsのModdingのコードのベンチを行ったコードとその結果を管理するリポジトリです
+
 
 ## プロジェクト：NET6
 - Framework
