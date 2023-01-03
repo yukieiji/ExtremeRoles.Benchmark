@@ -6,10 +6,16 @@ namespace NET6.Benchmark;
 [Config(typeof(BenchmarkConfig))]
 public class OptionAccessBenchmark
 {
-    private Dictionary<int, IDummyOption> intOption = new ();
-    private Dictionary<int, IDummyOption> floatOption = new();
-    private Dictionary<int, IDummyOption> boolOption = new();
-    private Dictionary<int, IDummyOption> selectionOption = new();
+    private Dictionary<int, IntDummyFixedTypeOption> intOption = new();
+    private Dictionary<int, FloatDummyFixedTypeOption> floatOption = new();
+    private Dictionary<int, BoolDummyFixedTypeOption> boolOption = new();
+    private Dictionary<int, SelectionDummyFixedTypeOption> selectionOption = new();
+
+
+    private Dictionary<int, IDummyOption> intDynamicOption = new ();
+    private Dictionary<int, IDummyOption> floatDynamicOption = new();
+    private Dictionary<int, IDummyOption> boolDynamicOption = new();
+    private Dictionary<int, IDummyOption> selectionDynamicOption = new();
 
     private Dictionary<int, IDummyOption> mixedOption = new();
 
@@ -25,11 +31,8 @@ public class OptionAccessBenchmark
     [GlobalSetup]
     public void Setup()
     {
-        createIntOption();
-        createFloatOption();
-        createBoolOption();
-        createSelectionOption();
-        createMixedOption();
+        createDynamicOption();
+        createBaseLineOption();
 
         randomAccessKey = Enumerable.Range(0, OptionNum).OrderBy(x => Rng.Instance.Next()).ToList();
         getAccessKey = Rng.Instance.Next(0, OptionNum);
@@ -37,7 +40,7 @@ public class OptionAccessBenchmark
 
     // 全アクセスベンチ
     // シーケンシャルアクセス
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void SequentialAllAccessIntOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -45,8 +48,7 @@ public class OptionAccessBenchmark
             int intValue = this.intOption[i].GetValue();
         }
     }
-
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void SequentialAllAccessFloatOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -54,8 +56,7 @@ public class OptionAccessBenchmark
             float floatValue = this.floatOption[i].GetValue();
         }
     }
-
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void SequentialAllAccessBoolOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -63,8 +64,7 @@ public class OptionAccessBenchmark
             bool boolValue = this.boolOption[i].GetValue();
         }
     }
-
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void SequentialAllAccessSelectionOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -72,9 +72,40 @@ public class OptionAccessBenchmark
             int selection = this.selectionOption[i].GetValue();
         }
     }
-
     [Benchmark]
-    public void SequentialAllAccessMixedOption()
+    public void SequentialAllAccessDynamicIntOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            int intValue = this.intDynamicOption[i].GetValue();
+        }
+    }
+    [Benchmark]
+    public void SequentialAllAccessDynamicFloatOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            float floatValue = this.floatDynamicOption[i].GetValue();
+        }
+    }
+    [Benchmark]
+    public void SequentialAllAccessDynamicBoolOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            bool boolValue = this.boolDynamicOption[i].GetValue();
+        }
+    }
+    [Benchmark]
+    public void SequentialAllAccessDynamicSelectionOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            int selection = this.selectionDynamicOption[i].GetValue();
+        }
+    }
+    [Benchmark]
+    public void SequentialAllAccessDynamicMixedOption()
     {
         for (int i = 0; i < OptionNum; ++i)
         {
@@ -84,7 +115,7 @@ public class OptionAccessBenchmark
 
 
     // ランダム全要素アクセス
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void RandomAllAccessIntOption()
     {
         foreach (int key in randomAccessKey)
@@ -92,7 +123,7 @@ public class OptionAccessBenchmark
             int intValue = this.intOption[key].GetValue();
         }
     }
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void RandomAllAccessFloatOption()
     {
         foreach (int key in randomAccessKey)
@@ -100,7 +131,7 @@ public class OptionAccessBenchmark
             float floatValue = this.floatOption[key].GetValue();
         }
     }
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void RandomAllAccessBoolOption()
     {
         foreach (int key in randomAccessKey)
@@ -108,12 +139,44 @@ public class OptionAccessBenchmark
             bool boolValue = this.boolOption[key].GetValue();
         }
     }
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public void RandomAllAccessSelectionOption()
     {
         foreach (int key in randomAccessKey)
         {
             int selection = this.selectionOption[key].GetValue();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessDynamicIntOption()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            int intValue = this.intDynamicOption[key].GetValue();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessDynamicFloatOption()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            float floatValue = this.floatDynamicOption[key].GetValue();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessDynamicBoolOption()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            bool boolValue = this.boolDynamicOption[key].GetValue();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessDynamicSelectionOption()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            int selection = this.selectionDynamicOption[key].GetValue();
         }
     }
     [Benchmark]
@@ -126,22 +189,38 @@ public class OptionAccessBenchmark
     }
 
     // 要素アクセス
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public int IntOptionAccess() => this.intOption[this.getAccessKey].GetValue();
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public float FloatOptionAccess() => this.floatOption[this.getAccessKey].GetValue();
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public bool BoolOptionAccess() => this.boolOption[this.getAccessKey].GetValue();
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public int SelectionOptionAccess() => this.selectionOption[this.getAccessKey].GetValue();
     [Benchmark]
+    public int DynamicIntOptionAccess() => this.intDynamicOption[this.getAccessKey].GetValue();
+    [Benchmark]
+    public float DynamicFloatOptionAccess() => this.floatDynamicOption[this.getAccessKey].GetValue();
+    [Benchmark]
+    public bool DynamicBoolOptionAccess() => this.boolDynamicOption[this.getAccessKey].GetValue();
+    [Benchmark]
+    public int DynamicSelectionOptionAccess() => this.selectionDynamicOption[this.getAccessKey].GetValue();
+    [Benchmark]
     public dynamic MixedOptionAccess() => this.mixedOption[this.getAccessKey].GetValue();
+
+    private void createBaseLineOption()
+    {
+        createIntOption();
+        createFloatOption();
+        createBoolOption();
+        createSelectionOption();
+    }
 
     private void createIntOption()
     {
         for (int i = 0; i < OptionNum; ++i)
         {
-            var option = new IntDummyOption(Rng.Instance.Next(SizeMin, SizeMax));
+            var option = new IntDummyFixedTypeOption(Rng.Instance.Next(SizeMin, SizeMax));
             option.SetSelection(Rng.Instance.Next(SizeMax));
 
             intOption.Add(i, option);
@@ -152,7 +231,7 @@ public class OptionAccessBenchmark
     {
         for (int i = 0; i < OptionNum; ++i)
         {
-            var option = new FloatDummyOption(Rng.Instance.Next(SizeMin, SizeMax));
+            var option = new FloatDummyFixedTypeOption(Rng.Instance.Next(SizeMin, SizeMax));
             option.SetSelection(Rng.Instance.Next(SizeMax));
 
             floatOption.Add(i, option);
@@ -163,7 +242,7 @@ public class OptionAccessBenchmark
     {
         for (int i = 0; i < OptionNum; ++i)
         {
-            boolOption.Add(i, new BoolDummyOption());
+            boolOption.Add(i, new BoolDummyFixedTypeOption());
         }
     }
 
@@ -171,14 +250,65 @@ public class OptionAccessBenchmark
     {
         for (int i = 0; i < OptionNum; ++i)
         {
-            var option = new SelectionDummyOption(Rng.Instance.Next(SizeMin, SizeMax));
+            var option = new SelectionDummyFixedTypeOption(Rng.Instance.Next(SizeMin, SizeMax));
             option.SetSelection(Rng.Instance.Next(SizeMax));
 
             selectionOption.Add(i, option);
         }
     }
 
-    private void createMixedOption()
+
+    private void createDynamicOption()
+    {
+        createDynamicIntOption();
+        createDynamicFloatOption();
+        createDynamicBoolOption();
+        createDynamicSelectionOption();
+        createDynamicMixedOption();
+    }
+
+    private void createDynamicIntOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            var option = new IntDummyOption(Rng.Instance.Next(SizeMin, SizeMax));
+            option.SetSelection(Rng.Instance.Next(SizeMax));
+
+            intDynamicOption.Add(i, option);
+        }
+    }
+
+    private void createDynamicFloatOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            var option = new FloatDummyOption(Rng.Instance.Next(SizeMin, SizeMax));
+            option.SetSelection(Rng.Instance.Next(SizeMax));
+
+            floatDynamicOption.Add(i, option);
+        }
+    }
+
+    private void createDynamicBoolOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            boolDynamicOption.Add(i, new BoolDummyOption());
+        }
+    }
+
+    private void createDynamicSelectionOption()
+    {
+        for (int i = 0; i < OptionNum; ++i)
+        {
+            var option = new SelectionDummyOption(Rng.Instance.Next(SizeMin, SizeMax));
+            option.SetSelection(Rng.Instance.Next(SizeMax));
+
+            selectionDynamicOption.Add(i, option);
+        }
+    }
+
+    private void createDynamicMixedOption()
     {
         int repeatNum = OptionNum / 4;
         int key = 0;
