@@ -5,5 +5,20 @@
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputType>Exe</OutputType>
+    <GameVersion>2022.12.14</GameVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AmongUs.GameLibs.Steam" Version="$(GameVersion)" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.3" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-be.565" />
+    <PackageReference Include="BepInEx.IL2CPP.MSBuild" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="HarmonyX" Version="2.10.0" />
+  </ItemGroup>
 </Project>
