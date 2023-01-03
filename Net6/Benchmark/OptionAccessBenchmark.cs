@@ -40,7 +40,7 @@ public class OptionAccessBenchmark
 
     // 全アクセスベンチ
     // シーケンシャルアクセス
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void SequentialAllAccessIntOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -48,7 +48,7 @@ public class OptionAccessBenchmark
             int intValue = this.intOption[i].GetValue();
         }
     }
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void SequentialAllAccessFloatOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -56,7 +56,7 @@ public class OptionAccessBenchmark
             float floatValue = this.floatOption[i].GetValue();
         }
     }
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void SequentialAllAccessBoolOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -64,7 +64,7 @@ public class OptionAccessBenchmark
             bool boolValue = this.boolOption[i].GetValue();
         }
     }
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void SequentialAllAccessSelectionOption()
     {
         for (int i = 0; i < OptionNum; ++i)
@@ -115,7 +115,7 @@ public class OptionAccessBenchmark
 
 
     // ランダム全要素アクセス
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void RandomAllAccessIntOption()
     {
         foreach (int key in randomAccessKey)
@@ -123,7 +123,7 @@ public class OptionAccessBenchmark
             int intValue = this.intOption[key].GetValue();
         }
     }
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void RandomAllAccessFloatOption()
     {
         foreach (int key in randomAccessKey)
@@ -131,7 +131,7 @@ public class OptionAccessBenchmark
             float floatValue = this.floatOption[key].GetValue();
         }
     }
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void RandomAllAccessBoolOption()
     {
         foreach (int key in randomAccessKey)
@@ -139,7 +139,7 @@ public class OptionAccessBenchmark
             bool boolValue = this.boolOption[key].GetValue();
         }
     }
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void RandomAllAccessSelectionOption()
     {
         foreach (int key in randomAccessKey)
@@ -189,13 +189,13 @@ public class OptionAccessBenchmark
     }
 
     // 要素アクセス
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public int IntOptionAccess() => this.intOption[this.getAccessKey].GetValue();
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public float FloatOptionAccess() => this.floatOption[this.getAccessKey].GetValue();
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public bool BoolOptionAccess() => this.boolOption[this.getAccessKey].GetValue();
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public int SelectionOptionAccess() => this.selectionOption[this.getAccessKey].GetValue();
     [Benchmark]
     public int DynamicIntOptionAccess() => this.intDynamicOption[this.getAccessKey].GetValue();
