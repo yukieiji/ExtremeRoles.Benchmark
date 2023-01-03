@@ -1,6 +1,6 @@
 # ExtremeRoles.Benchmark
 
-## ƒvƒƒWƒFƒNƒgFNET6
+## ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆï¼šNET6
 - Framework
   - .NET 6.0
 - C# Version
@@ -9,10 +9,10 @@
   - be.663
 - ExR Major Version
   - None(WIP Now)
-- Result
+- [Result](https://github.com/yukieiji/ExtremeRoles.Benchmark/blob/main/Result/.NET6/OptionAccessBenchmark.md)
 
-## ƒvƒƒWƒFƒNƒgFNETStandard2
+## ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆï¼šNETStandard2
 - Framework
   - .NET Standard 2.1
 - ExR Major Version
-  - Extreme Roles v3 ` Extreme Roles v5iCurrent Supportingj
+  - Extreme Roles v3 ï½ Extreme Roles v5ï¼ˆCurrent Supportingï¼‰
