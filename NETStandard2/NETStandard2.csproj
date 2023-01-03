@@ -6,7 +6,14 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputType>Exe</OutputType>
     <GameVersion>2022.12.14</GameVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+    <StartupObject>NETStandard2.Program</StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="netstandard" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="AmongUs.GameLibs.Steam" Version="$(GameVersion)" />
     <PackageReference Include="BenchmarkDotNet" Version="0.13.3" />
@@ -20,5 +27,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="HarmonyX" Version="2.10.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
 </Project>
