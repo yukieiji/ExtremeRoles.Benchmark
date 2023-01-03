@@ -1,12 +1,12 @@
 # Envs
-BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2364/21H2/November2021Update)
-AMD Ryzen Threadripper 1950X, 1 CPU, 32 logical and 16 physical cores
-.NET SDK=7.0.100
-  [Host]   : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2 [AttachedDebugger]
-  ShortRun : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+- BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2364/21H2/November2021Update)
+- AMD Ryzen Threadripper 1950X, 1 CPU, 32 logical and 16 physical cores
+- .NET SDK=7.0.100
+   - [Host]   : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2 [AttachedDebugger]
+   - ShortRun : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
 
-Job=ShortRun  IterationCount=3  LaunchCount=1  
-WarmupCount=3  
+- Job=ShortRun  IterationCount=3  LaunchCount=1  
+- WarmupCount=3  
 
 # Result
 |                             Method | OptionNum |          Mean |          Error |        StdDev |
