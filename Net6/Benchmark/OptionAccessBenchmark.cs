@@ -30,6 +30,11 @@ public class OptionAccessBenchmark
     private DynamicOptionCacher<bool> boolOptionCacher = null;
     private DynamicOptionCacher<int> selectionOptionCacher = null;
 
+    private DynamicNoneCheckOptionCacher<int> intNoneCheckOptionCacher = null;
+    private DynamicNoneCheckOptionCacher<float> floatNoneCheckOptionCacher = null;
+    private DynamicNoneCheckOptionCacher<bool> boolNoneCheckOptionCacher = null;
+    private DynamicNoneCheckOptionCacher<int> selectionNoneCheckOptionCacher = null;
+
     private List<int> randomAccessKey = new List<int>();
     private int getAccessKey;
 
@@ -46,6 +51,7 @@ public class OptionAccessBenchmark
         createBaseLineOption();
         createDynamicOptionValueCacher();
         createDynamicOptionCacher();
+        createDynamicOptionCacherWithNoneCheck();
 
         randomAccessKey = Enumerable.Range(0, OptionNum).OrderBy(x => Rng.Instance.Next()).ToList();
         getAccessKey = Rng.Instance.Next(0, OptionNum);
@@ -236,6 +242,15 @@ public class OptionAccessBenchmark
     public bool CacheBoolOptionAccess() => this.boolOptionCacher.Value;
     [Benchmark]
     public int CacheSelectionOptionAccess() => this.selectionOptionCacher.Value;
+    [Benchmark]
+    public int CacheNoneCheckIntOptionAccess() => this.intNoneCheckOptionCacher.Value;
+    [Benchmark]
+    public float CacheNoneCheckFloatOptionAccess() => this.floatNoneCheckOptionCacher.Value;
+    [Benchmark]
+    public bool CacheNoneCheckBoolOptionAccess() => this.boolNoneCheckOptionCacher.Value;
+    [Benchmark]
+    public int CacheNoneCheckSelectionOptionAccess() => this.selectionNoneCheckOptionCacher.Value;
+
 
     private void createBaseLineOption()
     {
@@ -391,5 +406,18 @@ public class OptionAccessBenchmark
         this.floatOptionCacher = new DynamicOptionCacher<float>(this.floatDynamicOption[key]);
         this.boolOptionCacher = new DynamicOptionCacher<bool>(this.boolDynamicOption[key]);
         this.selectionOptionCacher = new DynamicOptionCacher<int>(this.selectionDynamicOption[key]);
+    }
+    private void createDynamicOptionCacherWithNoneCheck()
+    {
+        int key = Rng.Instance.Next(0, OptionNum);
+
+        this.intNoneCheckOptionCacher = new DynamicNoneCheckOptionCacher<int>(
+            this.intDynamicOption[key]);
+        this.floatNoneCheckOptionCacher = new DynamicNoneCheckOptionCacher<float>(
+            this.floatDynamicOption[key]);
+        this.boolNoneCheckOptionCacher = new DynamicNoneCheckOptionCacher<bool>(
+            this.boolDynamicOption[key]);
+        this.selectionNoneCheckOptionCacher = new DynamicNoneCheckOptionCacher<int>(
+            this.selectionDynamicOption[key]);
     }
 }

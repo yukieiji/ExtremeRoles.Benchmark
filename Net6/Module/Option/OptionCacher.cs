@@ -47,4 +47,21 @@
             this.option = option;
         }
     }
+
+    internal class DynamicNoneCheckOptionCacher<T> where T : struct
+    {
+        public T Value
+        {
+            get
+            {
+                return option.GetValue();
+            }
+        }
+        private IDummyOption option;
+
+        public DynamicNoneCheckOptionCacher(IDummyOption option)
+        {
+            this.option = option;
+        }
+    }
 }
