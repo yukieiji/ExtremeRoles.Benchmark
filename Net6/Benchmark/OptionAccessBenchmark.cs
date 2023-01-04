@@ -19,6 +19,17 @@ public class OptionAccessBenchmark
 
     private Dictionary<int, IDummyOption> mixedOption = new();
 
+
+    private DynamicOptionValueCacher<int> intValueCacher = null;
+    private DynamicOptionValueCacher<float> floatValueCacher = null;
+    private DynamicOptionValueCacher<bool> boolValueCacher = null;
+    private DynamicOptionValueCacher<int> selectionValueCacher = null;
+
+    private DynamicOptionCacher<int> intOptionCacher = null;
+    private DynamicOptionCacher<float> floatOptionCacher = null;
+    private DynamicOptionCacher<bool> boolOptionCacher = null;
+    private DynamicOptionCacher<int> selectionOptionCacher = null;
+
     private List<int> randomAccessKey = new List<int>();
     private int getAccessKey;
 
@@ -33,6 +44,8 @@ public class OptionAccessBenchmark
     {
         createDynamicOption();
         createBaseLineOption();
+        createDynamicOptionValueCacher();
+        createDynamicOptionCacher();
 
         randomAccessKey = Enumerable.Range(0, OptionNum).OrderBy(x => Rng.Instance.Next()).ToList();
         getAccessKey = Rng.Instance.Next(0, OptionNum);
@@ -207,6 +220,22 @@ public class OptionAccessBenchmark
     public int DynamicSelectionOptionAccess() => this.selectionDynamicOption[this.getAccessKey].GetValue();
     [Benchmark]
     public dynamic MixedOptionAccess() => this.mixedOption[this.getAccessKey].GetValue();
+    [Benchmark]
+    public int CacheIntOptionValueAccess() => this.intValueCacher.Value;
+    [Benchmark]
+    public float CacheFloatOptionValueAccess() => this.floatValueCacher.Value;
+    [Benchmark]
+    public bool CacheBoolOptionValueAccess() => this.boolValueCacher.Value;
+    [Benchmark]
+    public int CacheSelectionOptionValueAccess() => this.selectionValueCacher.Value;
+    [Benchmark]
+    public int CacheIntOptionAccess() => this.intOptionCacher.Value;
+    [Benchmark]
+    public float CacheFloatOptionAccess() => this.floatOptionCacher.Value;
+    [Benchmark]
+    public bool CacheBoolOptionAccess() => this.boolOptionCacher.Value;
+    [Benchmark]
+    public int CacheSelectionOptionAccess() => this.selectionOptionCacher.Value;
 
     private void createBaseLineOption()
     {
@@ -342,5 +371,25 @@ public class OptionAccessBenchmark
                 key++;
             }
         }
+    }
+
+
+    private void createDynamicOptionValueCacher()
+    {
+        int key = Rng.Instance.Next(0, OptionNum);
+
+        this.intValueCacher = new DynamicOptionValueCacher<int>(key, this.intDynamicOption);
+        this.floatValueCacher = new DynamicOptionValueCacher<float>(key, this.floatDynamicOption);
+        this.boolValueCacher = new DynamicOptionValueCacher<bool>(key, this.boolDynamicOption);
+        this.selectionValueCacher = new DynamicOptionValueCacher<int>(key, this.selectionDynamicOption);
+    }
+    private void createDynamicOptionCacher()
+    {
+        int key = Rng.Instance.Next(0, OptionNum);
+
+        this.intOptionCacher = new DynamicOptionCacher<int>(this.intDynamicOption[key]);
+        this.floatOptionCacher = new DynamicOptionCacher<float>(this.floatDynamicOption[key]);
+        this.boolOptionCacher = new DynamicOptionCacher<bool>(this.boolDynamicOption[key]);
+        this.selectionOptionCacher = new DynamicOptionCacher<int>(this.selectionDynamicOption[key]);
     }
 }
