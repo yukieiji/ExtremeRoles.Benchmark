@@ -37,6 +37,13 @@ public interface IDummyOption
     }
 }
 
+public interface IDummyFixedOption<T>
+{
+    public void SetSelection(int newSelection);
+    public T GetValue();
+}
+
+
 public abstract class DummyOption<T> : IDummyOption
 {
     protected T[] OptionValue;
@@ -56,7 +63,7 @@ public abstract class DummyOption<T> : IDummyOption
 
 }
 
-public abstract class DummyFixedTypeOption<T, Out>
+public abstract class DummyFixedTypeOption<T, Out> : IDummyFixedOption<Out>
 {
     protected T[] OptionValue;
     protected int Selection;

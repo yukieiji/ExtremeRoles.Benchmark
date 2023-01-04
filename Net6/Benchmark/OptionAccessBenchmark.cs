@@ -35,6 +35,11 @@ public class OptionAccessBenchmark
     private DynamicNoneCheckOptionCacher<bool> boolNoneCheckOptionCacher = null;
     private DynamicNoneCheckOptionCacher<int> selectionNoneCheckOptionCacher = null;
 
+    private MixedFixTypeOptionContainer allOption = null;
+    private int intAccessKey;
+    private int floatAccessKey;
+    private int boolAccessKey;
+
     private List<int> randomAccessKey = new List<int>();
     private int getAccessKey;
 
@@ -52,6 +57,7 @@ public class OptionAccessBenchmark
         createDynamicOptionValueCacher();
         createDynamicOptionCacher();
         createDynamicOptionCacherWithNoneCheck();
+        createMixedFixOption();
 
         randomAccessKey = Enumerable.Range(0, OptionNum).OrderBy(x => Rng.Instance.Next()).ToList();
         getAccessKey = Rng.Instance.Next(0, OptionNum);
@@ -250,6 +256,12 @@ public class OptionAccessBenchmark
     public bool CacheNoneCheckBoolOptionAccess() => this.boolNoneCheckOptionCacher.Value;
     [Benchmark]
     public int CacheNoneCheckSelectionOptionAccess() => this.selectionNoneCheckOptionCacher.Value;
+    [Benchmark]
+    public float MixedFixFloatOptionAccess() => this.allOption.Get<float>(this.floatAccessKey);
+    [Benchmark]
+    public bool MixedFixBoolOptionAccess() => this.allOption.Get<bool>(this.boolAccessKey);
+    [Benchmark]
+    public int MixedFixIntOptionAccess() => this.allOption.Get<int>(this.intAccessKey);
 
 
     private void createBaseLineOption()
@@ -419,5 +431,60 @@ public class OptionAccessBenchmark
             this.boolDynamicOption[key]);
         this.selectionNoneCheckOptionCacher = new DynamicNoneCheckOptionCacher<int>(
             this.selectionDynamicOption[key]);
+    }
+
+    private void createMixedFixOption()
+    {
+        this.allOption = new MixedFixTypeOptionContainer();
+
+        int repeatNum = OptionNum / 4;
+        int key = 0;
+
+        List<int> intKeys = new List<int>();
+        List<int> floatKeys = new List<int>();
+        List<int> boolKeys = new List<int>();
+
+        for (int i = 0; i < repeatNum; ++i)
+        {
+            for (int j = 0; j < 4; ++j)
+            {
+                switch (j)
+                {
+                    case 0:
+                        var intOpt = new IntDummyFixedTypeOption(Rng.Instance.Next(SizeMin, SizeMax));
+                        intOpt.SetSelection(Rng.Instance.Next(SizeMax));
+                        this.allOption.Add(key, intOpt);
+                        intKeys.Add(key);
+                        break;
+                    case 1:
+                        var floatOpt = new FloatDummyFixedTypeOption(Rng.Instance.Next(SizeMin, SizeMax));
+                        floatOpt.SetSelection(Rng.Instance.Next(SizeMax));
+                        this.allOption.Add(key, floatOpt);
+                        floatKeys.Add(key);
+                        break;
+                    case 2:
+                        var boolOpt = new BoolDummyFixedTypeOption();
+                        this.allOption.Add(key, boolOpt);
+                        boolKeys.Add(key);
+                        break;
+                    case 3:
+                        var selOpt = new SelectionDummyFixedTypeOption(Rng.Instance.Next(SizeMin, SizeMax));
+                        selOpt.SetSelection(Rng.Instance.Next(SizeMax));
+                        this.allOption.Add(key, selOpt);
+                        intKeys.Add(key);
+                        break;
+                    default:
+                        continue;
+                }
+                key++;
+            }
+        }
+        this.intAccessKey = getRandomListValue(intKeys);
+        this.floatAccessKey = getRandomListValue(floatKeys);
+        this.boolAccessKey = getRandomListValue(boolKeys);
+    }
+    private static T getRandomListValue<T>(List<T> list)
+    {
+        return list[Rng.Instance.Next(0, list.Count)];
     }
 }
