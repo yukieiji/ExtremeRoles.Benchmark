@@ -9,140 +9,180 @@
 - WarmupCount=3  
 
 # Result
-|                                    Method | OptionNum |           Mean |           Error |         StdDev |
-|------------------------------------------ |---------- |---------------:|----------------:|---------------:|
-|              **SequentialAllAccessIntOption** |       **100** |     **788.349 ns** |     **276.3519 ns** |     **15.1478 ns** |
-|            SequentialAllAccessFloatOption |       100 |     889.891 ns |      27.6567 ns |      1.5160 ns |
-|             SequentialAllAccessBoolOption |       100 |     704.573 ns |      43.7352 ns |      2.3973 ns |
-|        SequentialAllAccessSelectionOption |       100 |     713.794 ns |      32.8111 ns |      1.7985 ns |
-|       SequentialAllAccessDynamicIntOption |       100 |   1,546.681 ns |     175.5107 ns |      9.6203 ns |
-|     SequentialAllAccessDynamicFloatOption |       100 |   1,607.139 ns |     146.5289 ns |      8.0317 ns |
-|      SequentialAllAccessDynamicBoolOption |       100 |   1,469.764 ns |     416.9767 ns |     22.8559 ns |
-| SequentialAllAccessDynamicSelectionOption |       100 |   1,403.314 ns |     287.9055 ns |     15.7811 ns |
-|     SequentialAllAccessDynamicMixedOption |       100 |   1,453.630 ns |     156.0720 ns |      8.5548 ns |
-|                  RandomAllAccessIntOption |       100 |     854.857 ns |     177.6459 ns |      9.7374 ns |
-|                RandomAllAccessFloatOption |       100 |   1,000.987 ns |     442.1025 ns |     24.2331 ns |
-|                 RandomAllAccessBoolOption |       100 |     782.134 ns |     231.9371 ns |     12.7133 ns |
-|            RandomAllAccessSelectionOption |       100 |     802.372 ns |     195.6081 ns |     10.7219 ns |
-|           RandomAllAccessDynamicIntOption |       100 |   1,617.007 ns |     905.4147 ns |     49.6288 ns |
-|         RandomAllAccessDynamicFloatOption |       100 |   1,718.818 ns |     328.8262 ns |     18.0241 ns |
-|          RandomAllAccessDynamicBoolOption |       100 |   1,492.049 ns |     684.8080 ns |     37.5366 ns |
-|     RandomAllAccessDynamicSelectionOption |       100 |   1,559.549 ns |     447.6842 ns |     24.5391 ns |
-|                RandoAllmAccessMixedOption |       100 |   2,767.741 ns |     745.2025 ns |     40.8471 ns |
-|                           IntOptionAccess |       100 |       8.666 ns |       0.0573 ns |      0.0031 ns |
-|                         FloatOptionAccess |       100 |       8.136 ns |       0.5343 ns |      0.0293 ns |
-|                          BoolOptionAccess |       100 |       8.136 ns |       0.8223 ns |      0.0451 ns |
-|                     SelectionOptionAccess |       100 |       7.976 ns |       0.9220 ns |      0.0505 ns |
-|                    DynamicIntOptionAccess |       100 |      19.237 ns |       5.4216 ns |      0.2972 ns |
-|                  DynamicFloatOptionAccess |       100 |      20.308 ns |       2.7394 ns |      0.1502 ns |
-|                   DynamicBoolOptionAccess |       100 |      18.943 ns |       5.4728 ns |      0.3000 ns |
-|              DynamicSelectionOptionAccess |       100 |      18.052 ns |       0.5089 ns |      0.0279 ns |
-|                         MixedOptionAccess |       100 |      13.356 ns |      15.2320 ns |      0.8349 ns |
-|              **SequentialAllAccessIntOption** |       **500** |   **3,937.024 ns** |      **58.3765 ns** |      **3.1998 ns** |
-|            SequentialAllAccessFloatOption |       500 |   4,528.560 ns |   1,331.7690 ns |     72.9988 ns |
-|             SequentialAllAccessBoolOption |       500 |   3,487.151 ns |     618.3533 ns |     33.8940 ns |
-|        SequentialAllAccessSelectionOption |       500 |   3,702.903 ns |     277.8256 ns |     15.2286 ns |
-|       SequentialAllAccessDynamicIntOption |       500 |   7,543.083 ns |     645.7752 ns |     35.3971 ns |
-|     SequentialAllAccessDynamicFloatOption |       500 |   8,583.374 ns |   7,026.7215 ns |    385.1583 ns |
-|      SequentialAllAccessDynamicBoolOption |       500 |   7,188.622 ns |     296.5788 ns |     16.2565 ns |
-| SequentialAllAccessDynamicSelectionOption |       500 |   7,436.962 ns |   3,510.2288 ns |    192.4075 ns |
-|     SequentialAllAccessDynamicMixedOption |       500 |   7,359.830 ns |   4,860.6586 ns |    266.4291 ns |
-|                  RandomAllAccessIntOption |       500 |   4,787.547 ns |     685.8897 ns |     37.5959 ns |
-|                RandomAllAccessFloatOption |       500 |   5,251.942 ns |     241.6667 ns |     13.2466 ns |
-|                 RandomAllAccessBoolOption |       500 |   4,225.912 ns |      63.3269 ns |      3.4712 ns |
-|            RandomAllAccessSelectionOption |       500 |   4,388.634 ns |     212.5747 ns |     11.6519 ns |
-|           RandomAllAccessDynamicIntOption |       500 |   8,809.674 ns |   5,005.9895 ns |    274.3952 ns |
-|         RandomAllAccessDynamicFloatOption |       500 |   9,450.763 ns |   3,010.9893 ns |    165.0425 ns |
-|          RandomAllAccessDynamicBoolOption |       500 |   7,727.277 ns |   1,126.8391 ns |     61.7659 ns |
-|     RandomAllAccessDynamicSelectionOption |       500 |   8,295.828 ns |   4,971.9499 ns |    272.5294 ns |
-|                RandoAllmAccessMixedOption |       500 |  16,057.537 ns |   3,479.9021 ns |    190.7452 ns |
-|                           IntOptionAccess |       500 |       8.740 ns |       1.7964 ns |      0.0985 ns |
-|                         FloatOptionAccess |       500 |       8.457 ns |       2.5436 ns |      0.1394 ns |
-|                          BoolOptionAccess |       500 |       8.115 ns |       0.1196 ns |      0.0066 ns |
-|                     SelectionOptionAccess |       500 |       8.028 ns |       1.2394 ns |      0.0679 ns |
-|                    DynamicIntOptionAccess |       500 |      19.155 ns |       3.0066 ns |      0.1648 ns |
-|                  DynamicFloatOptionAccess |       500 |      20.363 ns |       1.1627 ns |      0.0637 ns |
-|                   DynamicBoolOptionAccess |       500 |      19.919 ns |       6.9440 ns |      0.3806 ns |
-|              DynamicSelectionOptionAccess |       500 |      18.737 ns |      11.2964 ns |      0.6192 ns |
-|                         MixedOptionAccess |       500 |      13.622 ns |       9.1056 ns |      0.4991 ns |
-|              **SequentialAllAccessIntOption** |      **1000** |   **8,024.134 ns** |   **1,192.3330 ns** |     **65.3558 ns** |
-|            SequentialAllAccessFloatOption |      1000 |   9,103.492 ns |   1,876.9653 ns |    102.8828 ns |
-|             SequentialAllAccessBoolOption |      1000 |   6,927.188 ns |   1,016.4801 ns |     55.7167 ns |
-|        SequentialAllAccessSelectionOption |      1000 |   7,519.115 ns |   1,367.6808 ns |     74.9672 ns |
-|       SequentialAllAccessDynamicIntOption |      1000 |  15,597.409 ns |   6,555.5828 ns |    359.3336 ns |
-|     SequentialAllAccessDynamicFloatOption |      1000 |  16,904.483 ns |   2,376.6220 ns |    130.2707 ns |
-|      SequentialAllAccessDynamicBoolOption |      1000 |  14,750.489 ns |   3,028.3271 ns |    165.9928 ns |
-| SequentialAllAccessDynamicSelectionOption |      1000 |  16,052.923 ns |   1,512.6345 ns |     82.9126 ns |
-|     SequentialAllAccessDynamicMixedOption |      1000 |  15,544.476 ns |   3,044.8318 ns |    166.8975 ns |
-|                  RandomAllAccessIntOption |      1000 |  10,492.382 ns |     456.1696 ns |     25.0042 ns |
-|                RandomAllAccessFloatOption |      1000 |  11,241.084 ns |   2,002.2958 ns |    109.7526 ns |
-|                 RandomAllAccessBoolOption |      1000 |   8,870.760 ns |   1,280.2864 ns |     70.1768 ns |
-|            RandomAllAccessSelectionOption |      1000 |   9,294.124 ns |   5,985.4578 ns |    328.0831 ns |
-|           RandomAllAccessDynamicIntOption |      1000 |  18,710.093 ns |  11,541.9612 ns |    632.6538 ns |
-|         RandomAllAccessDynamicFloatOption |      1000 |  20,596.316 ns |   5,776.7646 ns |    316.6440 ns |
-|          RandomAllAccessDynamicBoolOption |      1000 |  16,042.095 ns |   1,146.0032 ns |     62.8163 ns |
-|     RandomAllAccessDynamicSelectionOption |      1000 |  18,262.808 ns |   6,666.0552 ns |    365.3890 ns |
-|                RandoAllmAccessMixedOption |      1000 |  32,337.254 ns |   8,937.2241 ns |    489.8794 ns |
-|                           IntOptionAccess |      1000 |       8.663 ns |       0.5372 ns |      0.0294 ns |
-|                         FloatOptionAccess |      1000 |       8.255 ns |       1.2492 ns |      0.0685 ns |
-|                          BoolOptionAccess |      1000 |       8.401 ns |       3.5802 ns |      0.1962 ns |
-|                     SelectionOptionAccess |      1000 |       8.169 ns |       1.2533 ns |      0.0687 ns |
-|                    DynamicIntOptionAccess |      1000 |      19.033 ns |       8.0394 ns |      0.4407 ns |
-|                  DynamicFloatOptionAccess |      1000 |      21.142 ns |       8.2586 ns |      0.4527 ns |
-|                   DynamicBoolOptionAccess |      1000 |      19.127 ns |       6.7510 ns |      0.3700 ns |
-|              DynamicSelectionOptionAccess |      1000 |      19.254 ns |       4.8008 ns |      0.2631 ns |
-|                         MixedOptionAccess |      1000 |      15.526 ns |       5.8634 ns |      0.3214 ns |
-|              **SequentialAllAccessIntOption** |      **5000** |  **44,101.424 ns** |   **5,169.6540 ns** |    **283.3662 ns** |
-|            SequentialAllAccessFloatOption |      5000 |  49,407.180 ns |     858.7365 ns |     47.0702 ns |
-|             SequentialAllAccessBoolOption |      5000 |  35,473.157 ns |   9,847.5657 ns |    539.7783 ns |
-|        SequentialAllAccessSelectionOption |      5000 |  69,064.001 ns |  27,936.6746 ns |  1,531.3034 ns |
-|       SequentialAllAccessDynamicIntOption |      5000 |  86,280.892 ns |  20,524.8289 ns |  1,125.0351 ns |
-|     SequentialAllAccessDynamicFloatOption |      5000 |  95,373.808 ns |  69,297.9701 ns |  3,798.4556 ns |
-|      SequentialAllAccessDynamicBoolOption |      5000 |  75,240.601 ns |  25,344.9312 ns |  1,389.2412 ns |
-| SequentialAllAccessDynamicSelectionOption |      5000 | 124,812.655 ns |  56,071.3733 ns |  3,073.4612 ns |
-|     SequentialAllAccessDynamicMixedOption |      5000 | 119,744.784 ns |  21,320.9311 ns |  1,168.6722 ns |
-|                  RandomAllAccessIntOption |      5000 |  80,919.897 ns |   7,281.5458 ns |    399.1261 ns |
-|                RandomAllAccessFloatOption |      5000 |  90,138.627 ns |  22,584.5733 ns |  1,237.9367 ns |
-|                 RandomAllAccessBoolOption |      5000 |  54,007.345 ns |   4,902.9550 ns |    268.7475 ns |
-|            RandomAllAccessSelectionOption |      5000 |  92,109.159 ns |  11,421.7687 ns |    626.0657 ns |
-|           RandomAllAccessDynamicIntOption |      5000 | 140,621.102 ns |  30,909.2522 ns |  1,694.2404 ns |
-|         RandomAllAccessDynamicFloatOption |      5000 | 160,333.854 ns | 322,088.2235 ns | 17,654.7424 ns |
-|          RandomAllAccessDynamicBoolOption |      5000 | 105,220.719 ns |  51,706.6832 ns |  2,834.2178 ns |
-|     RandomAllAccessDynamicSelectionOption |      5000 | 152,915.658 ns |  55,189.5078 ns |  3,025.1232 ns |
-|                RandoAllmAccessMixedOption |      5000 | 233,875.212 ns |  67,234.0442 ns |  3,685.3248 ns |
-|                           IntOptionAccess |      5000 |       8.794 ns |       0.8941 ns |      0.0490 ns |
-|                         FloatOptionAccess |      5000 |       8.220 ns |       2.5262 ns |      0.1385 ns |
-|                          BoolOptionAccess |      5000 |       8.134 ns |       1.4130 ns |      0.0775 ns |
-|                     SelectionOptionAccess |      5000 |       7.998 ns |       0.2581 ns |      0.0141 ns |
-|                    DynamicIntOptionAccess |      5000 |      19.860 ns |       3.1447 ns |      0.1724 ns |
-|                  DynamicFloatOptionAccess |      5000 |      21.168 ns |       9.3619 ns |      0.5132 ns |
-|                   DynamicBoolOptionAccess |      5000 |      18.616 ns |       2.3033 ns |      0.1263 ns |
-|              DynamicSelectionOptionAccess |      5000 |      19.328 ns |       9.6960 ns |      0.5315 ns |
-|                         MixedOptionAccess |      5000 |      13.304 ns |      16.8866 ns |      0.9256 ns |
-|              **SequentialAllAccessIntOption** |     **10000** |  **91,269.694 ns** |  **31,082.1367 ns** |  **1,703.7168 ns** |
-|            SequentialAllAccessFloatOption |     10000 | 171,848.429 ns |  93,430.5339 ns |  5,121.2428 ns |
-|             SequentialAllAccessBoolOption |     10000 |  70,879.732 ns |  22,708.7040 ns |  1,244.7407 ns |
-|        SequentialAllAccessSelectionOption |     10000 | 137,412.329 ns |  14,609.5959 ns |    800.8013 ns |
-|       SequentialAllAccessDynamicIntOption |     10000 | 172,301.855 ns |  15,059.1347 ns |    825.4420 ns |
-|     SequentialAllAccessDynamicFloatOption |     10000 | 187,557.324 ns |  73,890.7344 ns |  4,050.2005 ns |
-|      SequentialAllAccessDynamicBoolOption |     10000 | 143,419.051 ns |   2,183.1067 ns |    119.6634 ns |
-| SequentialAllAccessDynamicSelectionOption |     10000 | 262,259.717 ns | 197,062.5954 ns | 10,801.6658 ns |
-|     SequentialAllAccessDynamicMixedOption |     10000 | 260,304.606 ns | 183,234.8108 ns | 10,043.7183 ns |
-|                  RandomAllAccessIntOption |     10000 | 186,138.721 ns |  58,870.5805 ns |  3,226.8952 ns |
-|                RandomAllAccessFloatOption |     10000 | 310,761.882 ns | 413,244.1712 ns | 22,651.3075 ns |
-|                 RandomAllAccessBoolOption |     10000 | 139,184.408 ns |  29,814.7167 ns |  1,634.2452 ns |
-|            RandomAllAccessSelectionOption |     10000 | 216,961.849 ns | 101,307.0584 ns |  5,552.9817 ns |
-|           RandomAllAccessDynamicIntOption |     10000 | 313,805.518 ns |  83,264.7764 ns |  4,564.0234 ns |
-|         RandomAllAccessDynamicFloatOption |     10000 | 334,225.830 ns |  64,937.9499 ns |  3,559.4682 ns |
-|          RandomAllAccessDynamicBoolOption |     10000 | 253,350.179 ns | 496,015.6389 ns | 27,188.2909 ns |
-|     RandomAllAccessDynamicSelectionOption |     10000 | 354,060.563 ns |  44,432.4708 ns |  2,435.4937 ns |
-|                RandoAllmAccessMixedOption |     10000 | 558,258.512 ns | 435,805.7619 ns | 23,887.9844 ns |
-|                           IntOptionAccess |     10000 |       8.965 ns |       2.7872 ns |      0.1528 ns |
-|                         FloatOptionAccess |     10000 |       8.263 ns |       3.3293 ns |      0.1825 ns |
-|                          BoolOptionAccess |     10000 |       8.215 ns |       0.3808 ns |      0.0209 ns |
-|                     SelectionOptionAccess |     10000 |       8.226 ns |       0.8122 ns |      0.0445 ns |
-|                    DynamicIntOptionAccess |     10000 |      20.015 ns |      10.0546 ns |      0.5511 ns |
-|                  DynamicFloatOptionAccess |     10000 |      20.425 ns |       4.5616 ns |      0.2500 ns |
-|                   DynamicBoolOptionAccess |     10000 |      18.999 ns |       4.0420 ns |      0.2216 ns |
-|              DynamicSelectionOptionAccess |     10000 |      18.746 ns |       8.3533 ns |      0.4579 ns |
-|                         MixedOptionAccess |     10000 |      13.832 ns |       7.9890 ns |      0.4379 ns |
+|                                    Method | OptionNum |           Mean |          Error |         StdDev |         Median |
+|------------------------------------------ |---------- |---------------:|---------------:|---------------:|---------------:|
+|              **SequentialAllAccessIntOption** |       **100** |     **769.223 ns** |      **2.3723 ns** |      **3.4773 ns** |     **768.834 ns** |
+|            SequentialAllAccessFloatOption |       100 |     895.034 ns |      2.2172 ns |      3.1798 ns |     894.509 ns |
+|             SequentialAllAccessBoolOption |       100 |     690.880 ns |      2.1236 ns |      3.0456 ns |     690.773 ns |
+|        SequentialAllAccessSelectionOption |       100 |     717.012 ns |      3.6462 ns |      5.3446 ns |     715.583 ns |
+|       SequentialAllAccessDynamicIntOption |       100 |   1,486.949 ns |     30.9858 ns |     46.3782 ns |   1,474.290 ns |
+|     SequentialAllAccessDynamicFloatOption |       100 |   1,633.687 ns |     16.4074 ns |     23.5311 ns |   1,638.805 ns |
+|      SequentialAllAccessDynamicBoolOption |       100 |   1,387.605 ns |     11.9958 ns |     17.5833 ns |   1,383.223 ns |
+| SequentialAllAccessDynamicSelectionOption |       100 |   1,412.270 ns |     14.1517 ns |     20.7434 ns |   1,411.887 ns |
+|     SequentialAllAccessDynamicMixedOption |       100 |   1,421.277 ns |     25.9093 ns |     37.9776 ns |   1,436.043 ns |
+|                  RandomAllAccessIntOption |       100 |     833.271 ns |      2.6703 ns |      3.9141 ns |     833.674 ns |
+|                RandomAllAccessFloatOption |       100 |     955.886 ns |      3.8916 ns |      5.5812 ns |     954.901 ns |
+|                 RandomAllAccessBoolOption |       100 |     794.065 ns |     22.0747 ns |     32.3568 ns |     813.882 ns |
+|            RandomAllAccessSelectionOption |       100 |     783.111 ns |      7.2107 ns |     10.3413 ns |     780.056 ns |
+|           RandomAllAccessDynamicIntOption |       100 |   1,584.594 ns |     22.6794 ns |     33.9454 ns |   1,590.811 ns |
+|         RandomAllAccessDynamicFloatOption |       100 |   1,714.723 ns |     23.1030 ns |     34.5796 ns |   1,706.103 ns |
+|          RandomAllAccessDynamicBoolOption |       100 |   1,462.157 ns |     27.5363 ns |     41.2151 ns |   1,452.819 ns |
+|     RandomAllAccessDynamicSelectionOption |       100 |   1,488.240 ns |     23.0461 ns |     33.7807 ns |   1,483.337 ns |
+|                RandoAllmAccessMixedOption |       100 |   2,699.989 ns |     62.3029 ns |     93.2521 ns |   2,696.509 ns |
+|                           IntOptionAccess |       100 |       8.723 ns |      0.0286 ns |      0.0391 ns |       8.717 ns |
+|                         FloatOptionAccess |       100 |       8.135 ns |      0.0152 ns |      0.0209 ns |       8.140 ns |
+|                          BoolOptionAccess |       100 |       8.124 ns |      0.0257 ns |      0.0369 ns |       8.117 ns |
+|                     SelectionOptionAccess |       100 |       8.073 ns |      0.0542 ns |      0.0760 ns |       8.076 ns |
+|                    DynamicIntOptionAccess |       100 |      18.943 ns |      0.2605 ns |      0.3819 ns |      18.752 ns |
+|                  DynamicFloatOptionAccess |       100 |      20.333 ns |      0.2674 ns |      0.4003 ns |      20.294 ns |
+|                   DynamicBoolOptionAccess |       100 |      18.292 ns |      0.1129 ns |      0.1655 ns |      18.234 ns |
+|              DynamicSelectionOptionAccess |       100 |      18.029 ns |      0.1729 ns |      0.2587 ns |      17.972 ns |
+|                         MixedOptionAccess |       100 |      13.829 ns |      0.2133 ns |      0.3126 ns |      13.762 ns |
+|                 CacheIntOptionValueAccess |       100 |       4.636 ns |      0.0228 ns |      0.0341 ns |       4.633 ns |
+|               CacheFloatOptionValueAccess |       100 |       4.646 ns |      0.0202 ns |      0.0290 ns |       4.636 ns |
+|                CacheBoolOptionValueAccess |       100 |       4.634 ns |      0.0314 ns |      0.0470 ns |       4.635 ns |
+|           CacheSelectionOptionValueAccess |       100 |       4.647 ns |      0.0323 ns |      0.0474 ns |       4.655 ns |
+|                      CacheIntOptionAccess |       100 |       4.612 ns |      0.0260 ns |      0.0382 ns |       4.606 ns |
+|                    CacheFloatOptionAccess |       100 |       4.644 ns |      0.0187 ns |      0.0268 ns |       4.631 ns |
+|                     CacheBoolOptionAccess |       100 |       4.634 ns |      0.0157 ns |      0.0220 ns |       4.636 ns |
+|                CacheSelectionOptionAccess |       100 |       4.614 ns |      0.0144 ns |      0.0206 ns |       4.625 ns |
+|              **SequentialAllAccessIntOption** |       **500** |   **3,929.443 ns** |     **25.0305 ns** |     **36.6895 ns** |   **3,928.434 ns** |
+|            SequentialAllAccessFloatOption |       500 |   4,420.169 ns |     12.6685 ns |     18.5693 ns |   4,424.107 ns |
+|             SequentialAllAccessBoolOption |       500 |   3,438.620 ns |     24.1411 ns |     36.1333 ns |   3,425.974 ns |
+|        SequentialAllAccessSelectionOption |       500 |   3,674.204 ns |      9.2913 ns |     12.7180 ns |   3,678.060 ns |
+|       SequentialAllAccessDynamicIntOption |       500 |   7,220.875 ns |     37.9983 ns |     55.6974 ns |   7,227.168 ns |
+|     SequentialAllAccessDynamicFloatOption |       500 |   8,001.090 ns |     42.3737 ns |     60.7711 ns |   8,013.850 ns |
+|      SequentialAllAccessDynamicBoolOption |       500 |   6,829.436 ns |     37.2549 ns |     53.4299 ns |   6,824.704 ns |
+| SequentialAllAccessDynamicSelectionOption |       500 |   7,207.247 ns |    120.1096 ns |    179.7744 ns |   7,166.512 ns |
+|     SequentialAllAccessDynamicMixedOption |       500 |   7,290.363 ns |     69.7585 ns |    102.2511 ns |   7,320.561 ns |
+|                  RandomAllAccessIntOption |       500 |   4,685.431 ns |     29.2320 ns |     40.9792 ns |   4,680.967 ns |
+|                RandomAllAccessFloatOption |       500 |   5,096.145 ns |     36.0519 ns |     53.9608 ns |   5,092.920 ns |
+|                 RandomAllAccessBoolOption |       500 |   4,069.545 ns |     30.6827 ns |     44.9744 ns |   4,084.913 ns |
+|            RandomAllAccessSelectionOption |       500 |   4,313.740 ns |     12.8998 ns |     18.5005 ns |   4,319.059 ns |
+|           RandomAllAccessDynamicIntOption |       500 |   8,135.540 ns |     67.1624 ns |     96.3223 ns |   8,147.994 ns |
+|         RandomAllAccessDynamicFloatOption |       500 |   8,759.424 ns |    117.8721 ns |    172.7754 ns |   8,717.793 ns |
+|          RandomAllAccessDynamicBoolOption |       500 |   7,019.779 ns |     77.7431 ns |    113.9548 ns |   7,038.268 ns |
+|     RandomAllAccessDynamicSelectionOption |       500 |   7,378.453 ns |     91.6940 ns |    137.2433 ns |   7,346.004 ns |
+|                RandoAllmAccessMixedOption |       500 |  14,568.176 ns |    219.6031 ns |    321.8914 ns |  14,594.733 ns |
+|                           IntOptionAccess |       500 |       8.646 ns |      0.0949 ns |      0.1361 ns |       8.605 ns |
+|                         FloatOptionAccess |       500 |       7.967 ns |      0.0526 ns |      0.0755 ns |       7.937 ns |
+|                          BoolOptionAccess |       500 |       8.027 ns |      0.0899 ns |      0.1200 ns |       8.080 ns |
+|                     SelectionOptionAccess |       500 |       7.950 ns |      0.0769 ns |      0.1102 ns |       8.011 ns |
+|                    DynamicIntOptionAccess |       500 |      17.843 ns |      0.2146 ns |      0.3146 ns |      18.027 ns |
+|                  DynamicFloatOptionAccess |       500 |      19.013 ns |      0.1605 ns |      0.2302 ns |      19.013 ns |
+|                   DynamicBoolOptionAccess |       500 |      17.273 ns |      0.1458 ns |      0.1996 ns |      17.357 ns |
+|              DynamicSelectionOptionAccess |       500 |      16.845 ns |      0.1348 ns |      0.1890 ns |      16.808 ns |
+|                         MixedOptionAccess |       500 |      13.364 ns |      0.1086 ns |      0.1592 ns |      13.356 ns |
+|                 CacheIntOptionValueAccess |       500 |       4.572 ns |      0.0367 ns |      0.0502 ns |       4.578 ns |
+|               CacheFloatOptionValueAccess |       500 |       4.570 ns |      0.0339 ns |      0.0486 ns |       4.562 ns |
+|                CacheBoolOptionValueAccess |       500 |       4.597 ns |      0.0373 ns |      0.0535 ns |       4.623 ns |
+|           CacheSelectionOptionValueAccess |       500 |       4.541 ns |      0.0272 ns |      0.0390 ns |       4.523 ns |
+|                      CacheIntOptionAccess |       500 |       4.577 ns |      0.0380 ns |      0.0544 ns |       4.577 ns |
+|                    CacheFloatOptionAccess |       500 |       4.572 ns |      0.0368 ns |      0.0540 ns |       4.553 ns |
+|                     CacheBoolOptionAccess |       500 |       4.575 ns |      0.0340 ns |      0.0509 ns |       4.567 ns |
+|                CacheSelectionOptionAccess |       500 |       4.581 ns |      0.0346 ns |      0.0484 ns |       4.603 ns |
+|              **SequentialAllAccessIntOption** |      **1000** |   **7,681.952 ns** |     **67.7949 ns** |     **95.0390 ns** |   **7,619.123 ns** |
+|            SequentialAllAccessFloatOption |      1000 |   8,710.254 ns |     78.5771 ns |    107.5572 ns |   8,663.996 ns |
+|             SequentialAllAccessBoolOption |      1000 |   6,738.756 ns |     49.9720 ns |     70.0538 ns |   6,740.227 ns |
+|        SequentialAllAccessSelectionOption |      1000 |   7,253.413 ns |     61.9457 ns |     92.7173 ns |   7,244.361 ns |
+|       SequentialAllAccessDynamicIntOption |      1000 |  13,978.207 ns |    159.9921 ns |    234.5143 ns |  14,033.133 ns |
+|     SequentialAllAccessDynamicFloatOption |      1000 |  15,408.434 ns |     73.0330 ns |    104.7418 ns |  15,411.446 ns |
+|      SequentialAllAccessDynamicBoolOption |      1000 |  13,010.604 ns |     98.9152 ns |    141.8612 ns |  13,040.887 ns |
+| SequentialAllAccessDynamicSelectionOption |      1000 |  13,794.460 ns |    208.2342 ns |    291.9153 ns |  13,626.727 ns |
+|     SequentialAllAccessDynamicMixedOption |      1000 |  13,993.819 ns |    460.6558 ns |    675.2234 ns |  13,768.437 ns |
+|                  RandomAllAccessIntOption |      1000 |   9,858.419 ns |     74.9553 ns |    107.4987 ns |   9,934.626 ns |
+|                RandomAllAccessFloatOption |      1000 |  10,599.616 ns |     88.7344 ns |    121.4606 ns |  10,549.931 ns |
+|                 RandomAllAccessBoolOption |      1000 |   8,497.291 ns |     37.2501 ns |     50.9884 ns |   8,521.856 ns |
+|            RandomAllAccessSelectionOption |      1000 |   8,926.471 ns |     62.1114 ns |     91.0422 ns |   8,980.515 ns |
+|           RandomAllAccessDynamicIntOption |      1000 |  16,578.453 ns |    266.2475 ns |    381.8442 ns |  16,711.099 ns |
+|         RandomAllAccessDynamicFloatOption |      1000 |  18,705.185 ns |    139.6898 ns |    209.0811 ns |  18,759.862 ns |
+|          RandomAllAccessDynamicBoolOption |      1000 |  14,599.057 ns |    218.0632 ns |    319.6343 ns |  14,715.744 ns |
+|     RandomAllAccessDynamicSelectionOption |      1000 |  15,460.277 ns |    178.9961 ns |    262.3701 ns |  15,364.029 ns |
+|                RandoAllmAccessMixedOption |      1000 |  29,306.543 ns |    561.2434 ns |    804.9185 ns |  29,314.899 ns |
+|                           IntOptionAccess |      1000 |       8.697 ns |      0.0861 ns |      0.1288 ns |       8.719 ns |
+|                         FloatOptionAccess |      1000 |       8.043 ns |      0.0840 ns |      0.1231 ns |       8.065 ns |
+|                          BoolOptionAccess |      1000 |       8.105 ns |      0.0802 ns |      0.1201 ns |       8.141 ns |
+|                     SelectionOptionAccess |      1000 |       7.945 ns |      0.0720 ns |      0.1055 ns |       7.935 ns |
+|                    DynamicIntOptionAccess |      1000 |      17.714 ns |      0.2379 ns |      0.3488 ns |      17.851 ns |
+|                  DynamicFloatOptionAccess |      1000 |      19.267 ns |      0.1455 ns |      0.2040 ns |      19.225 ns |
+|                   DynamicBoolOptionAccess |      1000 |      17.123 ns |      0.1683 ns |      0.2246 ns |      17.008 ns |
+|              DynamicSelectionOptionAccess |      1000 |      17.220 ns |      0.1456 ns |      0.2180 ns |      17.226 ns |
+|                         MixedOptionAccess |      1000 |      13.257 ns |      0.2126 ns |      0.3116 ns |      13.322 ns |
+|                 CacheIntOptionValueAccess |      1000 |       4.572 ns |      0.0344 ns |      0.0504 ns |       4.576 ns |
+|               CacheFloatOptionValueAccess |      1000 |       4.573 ns |      0.0400 ns |      0.0547 ns |       4.601 ns |
+|                CacheBoolOptionValueAccess |      1000 |       4.576 ns |      0.0410 ns |      0.0589 ns |       4.560 ns |
+|           CacheSelectionOptionValueAccess |      1000 |       4.574 ns |      0.0370 ns |      0.0543 ns |       4.557 ns |
+|                      CacheIntOptionAccess |      1000 |       4.573 ns |      0.0319 ns |      0.0468 ns |       4.556 ns |
+|                    CacheFloatOptionAccess |      1000 |       4.542 ns |      0.0338 ns |      0.0474 ns |       4.524 ns |
+|                     CacheBoolOptionAccess |      1000 |       4.604 ns |      0.0370 ns |      0.0554 ns |       4.627 ns |
+|                CacheSelectionOptionAccess |      1000 |       4.583 ns |      0.0351 ns |      0.0525 ns |       4.619 ns |
+|              **SequentialAllAccessIntOption** |      **5000** |  **41,045.059 ns** |    **403.8407 ns** |    **579.1762 ns** |  **41,258.813 ns** |
+|            SequentialAllAccessFloatOption |      5000 |  46,226.566 ns |    328.5368 ns |    449.7049 ns |  46,555.649 ns |
+|             SequentialAllAccessBoolOption |      5000 |  34,385.349 ns |    202.5979 ns |    290.5598 ns |  34,461.688 ns |
+|        SequentialAllAccessSelectionOption |      5000 |  63,388.497 ns |    544.6630 ns |    781.1394 ns |  62,960.187 ns |
+|       SequentialAllAccessDynamicIntOption |      5000 |  74,614.454 ns |    796.8562 ns |  1,168.0214 ns |  74,828.833 ns |
+|     SequentialAllAccessDynamicFloatOption |      5000 |  81,848.763 ns |  1,192.9995 ns |  1,785.6255 ns |  81,394.220 ns |
+|      SequentialAllAccessDynamicBoolOption |      5000 |  66,273.771 ns |    885.1715 ns |  1,297.4729 ns |  66,025.403 ns |
+| SequentialAllAccessDynamicSelectionOption |      5000 | 108,764.132 ns |  1,178.5753 ns |  1,727.5404 ns | 107,917.175 ns |
+|     SequentialAllAccessDynamicMixedOption |      5000 | 109,024.533 ns |    677.5534 ns |    993.1490 ns | 109,157.886 ns |
+|                  RandomAllAccessIntOption |      5000 |  76,190.201 ns |    585.6343 ns |    876.5499 ns |  75,876.712 ns |
+|                RandomAllAccessFloatOption |      5000 |  83,581.522 ns |    616.2700 ns |    922.4039 ns |  83,803.662 ns |
+|                 RandomAllAccessBoolOption |      5000 |  53,418.894 ns |    319.3546 ns |    458.0088 ns |  53,264.838 ns |
+|            RandomAllAccessSelectionOption |      5000 |  84,928.524 ns |    603.6513 ns |    826.2847 ns |  85,425.647 ns |
+|           RandomAllAccessDynamicIntOption |      5000 | 124,886.619 ns |  1,758.5174 ns |  2,522.0131 ns | 125,933.191 ns |
+|         RandomAllAccessDynamicFloatOption |      5000 | 134,557.083 ns |  1,165.5520 ns |  1,708.4510 ns | 135,093.091 ns |
+|          RandomAllAccessDynamicBoolOption |      5000 |  92,611.148 ns |  1,077.3622 ns |  1,612.5450 ns |  92,877.435 ns |
+|     RandomAllAccessDynamicSelectionOption |      5000 | 141,736.265 ns |  1,541.6490 ns |  2,210.9870 ns | 142,786.267 ns |
+|                RandoAllmAccessMixedOption |      5000 | 207,207.332 ns |  1,484.3891 ns |  2,221.7637 ns | 206,626.636 ns |
+|                           IntOptionAccess |      5000 |       8.587 ns |      0.0708 ns |      0.1060 ns |       8.557 ns |
+|                         FloatOptionAccess |      5000 |       7.969 ns |      0.0916 ns |      0.1284 ns |       7.948 ns |
+|                          BoolOptionAccess |      5000 |       8.023 ns |      0.0821 ns |      0.1229 ns |       8.047 ns |
+|                     SelectionOptionAccess |      5000 |       7.856 ns |      0.0813 ns |      0.1166 ns |       7.897 ns |
+|                    DynamicIntOptionAccess |      5000 |      17.484 ns |      0.2059 ns |      0.2952 ns |      17.448 ns |
+|                  DynamicFloatOptionAccess |      5000 |      19.246 ns |      0.3110 ns |      0.4558 ns |      19.151 ns |
+|                   DynamicBoolOptionAccess |      5000 |      17.288 ns |      0.1632 ns |      0.2393 ns |      17.308 ns |
+|              DynamicSelectionOptionAccess |      5000 |      17.075 ns |      0.1328 ns |      0.1905 ns |      17.098 ns |
+|                         MixedOptionAccess |      5000 |      12.678 ns |      0.3703 ns |      0.5428 ns |      12.655 ns |
+|                 CacheIntOptionValueAccess |      5000 |       4.581 ns |      0.0383 ns |      0.0562 ns |       4.609 ns |
+|               CacheFloatOptionValueAccess |      5000 |       4.580 ns |      0.0420 ns |      0.0602 ns |       4.559 ns |
+|                CacheBoolOptionValueAccess |      5000 |       4.588 ns |      0.0357 ns |      0.0524 ns |       4.619 ns |
+|           CacheSelectionOptionValueAccess |      5000 |       4.622 ns |      0.0268 ns |      0.0385 ns |       4.627 ns |
+|                      CacheIntOptionAccess |      5000 |       4.545 ns |      0.0282 ns |      0.0404 ns |       4.524 ns |
+|                    CacheFloatOptionAccess |      5000 |       4.585 ns |      0.0292 ns |      0.0409 ns |       4.618 ns |
+|                     CacheBoolOptionAccess |      5000 |       4.614 ns |      0.0192 ns |      0.0263 ns |       4.621 ns |
+|                CacheSelectionOptionAccess |      5000 |       4.583 ns |      0.0366 ns |      0.0525 ns |       4.610 ns |
+|              **SequentialAllAccessIntOption** |     **10000** |  **83,302.318 ns** |    **655.2140 ns** |    **960.4042 ns** |  **83,819.958 ns** |
+|            SequentialAllAccessFloatOption |     10000 | 147,519.014 ns |  4,066.4851 ns |  5,832.0314 ns | 146,440.173 ns |
+|             SequentialAllAccessBoolOption |     10000 |  68,785.829 ns |    632.5495 ns |    886.7460 ns |  68,251.813 ns |
+|        SequentialAllAccessSelectionOption |     10000 | 127,868.470 ns |  1,010.3100 ns |  1,480.8993 ns | 128,548.267 ns |
+|       SequentialAllAccessDynamicIntOption |     10000 | 164,867.415 ns |  3,279.0759 ns |  4,702.7527 ns | 165,416.040 ns |
+|     SequentialAllAccessDynamicFloatOption |     10000 | 185,651.854 ns |  1,740.6146 ns |  2,551.3703 ns | 185,608.130 ns |
+|      SequentialAllAccessDynamicBoolOption |     10000 | 144,424.884 ns |  1,560.1763 ns |  2,335.1984 ns | 144,079.810 ns |
+| SequentialAllAccessDynamicSelectionOption |     10000 | 247,294.533 ns |  6,541.5000 ns |  9,381.6238 ns | 244,943.970 ns |
+|     SequentialAllAccessDynamicMixedOption |     10000 | 265,644.893 ns |  9,538.4901 ns | 14,276.7629 ns | 267,090.808 ns |
+|                  RandomAllAccessIntOption |     10000 | 187,023.116 ns |  2,851.8256 ns |  4,180.1690 ns | 186,181.860 ns |
+|                RandomAllAccessFloatOption |     10000 | 318,499.277 ns | 23,507.7910 ns | 35,185.3547 ns | 310,441.638 ns |
+|                 RandomAllAccessBoolOption |     10000 | 138,642.910 ns |  1,119.3197 ns |  1,640.6843 ns | 138,118.457 ns |
+|            RandomAllAccessSelectionOption |     10000 | 211,218.360 ns |  4,086.6155 ns |  5,860.9018 ns | 211,965.271 ns |
+|           RandomAllAccessDynamicIntOption |     10000 | 323,403.388 ns |  9,492.0457 ns | 13,913.3175 ns | 320,980.225 ns |
+|         RandomAllAccessDynamicFloatOption |     10000 | 344,786.705 ns |  6,080.7146 ns |  8,913.0327 ns | 342,637.939 ns |
+|          RandomAllAccessDynamicBoolOption |     10000 | 242,105.001 ns |  2,789.9290 ns |  4,089.4418 ns | 242,569.336 ns |
+|     RandomAllAccessDynamicSelectionOption |     10000 | 347,862.742 ns |  9,078.8976 ns | 13,307.7303 ns | 343,595.361 ns |
+|                RandoAllmAccessMixedOption |     10000 | 557,411.566 ns | 27,617.1248 ns | 41,336.0120 ns | 547,684.033 ns |
+|                           IntOptionAccess |     10000 |       8.768 ns |      0.0792 ns |      0.1161 ns |       8.785 ns |
+|                         FloatOptionAccess |     10000 |       8.180 ns |      0.0443 ns |      0.0650 ns |       8.172 ns |
+|                          BoolOptionAccess |     10000 |       8.117 ns |      0.0507 ns |      0.0727 ns |       8.100 ns |
+|                     SelectionOptionAccess |     10000 |       8.102 ns |      0.0855 ns |      0.1227 ns |       8.135 ns |
+|                    DynamicIntOptionAccess |     10000 |      19.027 ns |      0.2521 ns |      0.3774 ns |      18.962 ns |
+|                  DynamicFloatOptionAccess |     10000 |      20.712 ns |      0.3026 ns |      0.4528 ns |      20.682 ns |
+|                   DynamicBoolOptionAccess |     10000 |      18.742 ns |      0.2844 ns |      0.4169 ns |      18.699 ns |
+|              DynamicSelectionOptionAccess |     10000 |      18.893 ns |      0.5005 ns |      0.7336 ns |      18.747 ns |
+|                         MixedOptionAccess |     10000 |      13.700 ns |      0.7262 ns |      1.0644 ns |      14.105 ns |
+|                 CacheIntOptionValueAccess |     10000 |       4.631 ns |      0.0146 ns |      0.0200 ns |       4.636 ns |
+|               CacheFloatOptionValueAccess |     10000 |       4.666 ns |      0.0213 ns |      0.0298 ns |       4.660 ns |
+|                CacheBoolOptionValueAccess |     10000 |       4.657 ns |      0.0140 ns |      0.0201 ns |       4.650 ns |
+|           CacheSelectionOptionValueAccess |     10000 |       4.674 ns |      0.0299 ns |      0.0419 ns |       4.663 ns |
+|                      CacheIntOptionAccess |     10000 |       4.668 ns |      0.0337 ns |      0.0450 ns |       4.649 ns |
+|                    CacheFloatOptionAccess |     10000 |       4.672 ns |      0.0246 ns |      0.0369 ns |       4.671 ns |
+|                     CacheBoolOptionAccess |     10000 |       4.720 ns |      0.0733 ns |      0.1074 ns |       4.674 ns |
+|                CacheSelectionOptionAccess |     10000 |       4.641 ns |      0.0092 ns |      0.0132 ns |       4.638 ns |
