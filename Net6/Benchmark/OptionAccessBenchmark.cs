@@ -240,6 +240,16 @@ public class OptionAccessBenchmark
     public bool CacheBoolOptionValueAccess() => this.boolValueCacher.Value;
     [Benchmark]
     public int CacheSelectionOptionValueAccess() => this.selectionValueCacher.Value;
+    /*
+    [Benchmark]
+    public int CacheIntOptionValueImplicitAccess() => this.intValueCacher;
+    [Benchmark]
+    public float CacheFloatOptionValueImplicitAccess() => this.floatValueCacher;
+    [Benchmark]
+    public bool CacheBoolOptionValueImplicitAccess() => this.boolValueCacher;
+    [Benchmark]
+    public int CacheSelectionOptionValueImplicitAccess() => this.selectionValueCacher;
+    */
     [Benchmark]
     public int CacheIntOptionAccess() => this.intOptionCacher.Value;
     [Benchmark]

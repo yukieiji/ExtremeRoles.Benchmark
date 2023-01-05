@@ -23,6 +23,10 @@
             this.globalOption = option;
             this.key = key;
         }
+        public static implicit operator T(DynamicOptionValueCacher<T> cacher)
+        {
+            return cacher.Value;
+        }
     }
 
     internal class DynamicOptionCacher<T> where T : struct
