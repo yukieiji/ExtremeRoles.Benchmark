@@ -10,11 +10,11 @@ JP: このリポジトリはExRやAmongUsのModdingのコードのベンチを�
 - BepInEx
   - be.663
 - ExR Major Version
-  - None(WIP Now)
+  - Extreme Roles v6.1.0.0 ～ Extreme Roles v7（Current Supporting）
 - [Result](https://github.com/yukieiji/ExtremeRoles.Benchmark/blob/main/Result/.NET6/OptionAccessBenchmark.md)
 
 ## プロジェクト：NETStandard2
 - Framework
   - .NET Standard 2.1
 - ExR Major Version
-  - Extreme Roles v3 ～ Extreme Roles v5（Current Supporting）
+  - Extreme Roles v3 ～ Extreme Roles v5（Deprecated）
