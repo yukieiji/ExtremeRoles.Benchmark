@@ -37,9 +37,9 @@ internal class MixedFixTypeOptionContainer
 
     public void Freeze()
     {
-        this._intFrozenOptions = FrozenDictionary.ToFrozenDictionary(this._intOptions);
-        this._floatFrozenOptions = FrozenDictionary.ToFrozenDictionary(this._floatOptions);
-        this._boolFrozenOptions = FrozenDictionary.ToFrozenDictionary(this._boolOptions);
+        this._intFrozenOptions = this._intOptions.ToFrozenDictionary(true);
+        this._floatFrozenOptions = this._floatOptions.ToFrozenDictionary(true);
+        this._boolFrozenOptions = this._boolOptions.ToFrozenDictionary(true);
     }
 
     public void Add<T>(int key, IDummyFixedOption<T> option)
