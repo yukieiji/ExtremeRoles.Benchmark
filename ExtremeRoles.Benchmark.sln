@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6", "Net6\NET6.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET7", "Net7\NET7.csproj", "{44460911-F4B1-48B6-93AC-9D80FF38859E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETStandard2", "NETStandard2\NETStandard2.csproj", "{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NETStandard2", "NETStandard2\NETStandard2.csproj", "{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET8", "NET8\NET8.csproj", "{28F4AF67-5223-4655-B920-2BE9064C968B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Release|x86.ActiveCfg = Release|x86
 		{4E6AB540-3D53-4D1C-8A67-3D4CAA23F1BF}.Release|x86.Build.0 = Release|x86
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Debug|x86.Build.0 = Debug|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Release|x86.ActiveCfg = Release|Any CPU
+		{28F4AF67-5223-4655-B920-2BE9064C968B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
