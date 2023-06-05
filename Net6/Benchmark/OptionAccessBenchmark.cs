@@ -140,6 +140,30 @@ public class OptionAccessBenchmark
             dynamic value = this.mixedOption[i].GetValue();
         }
     }
+    [Benchmark]
+    public void SequentialAllAccessMixedFixOption()
+    {
+        foreach (var opt in this.allOption.GetAllOption())
+        {
+            int value = opt.GetSelection();
+        }
+    }
+    [Benchmark]
+    public void SequentialAllAccessMixedFixExRImpV7100Option()
+    {
+        foreach (var opt in this.allOptionExR.GetAllOption())
+        {
+            int value = opt.GetSelection();
+        }
+    }
+    [Benchmark]
+    public void SequentialAllAccessMixedFixExRImpV7130Option()
+    {
+        foreach (var opt in this.allOptionExRNew.GetAllOption())
+        {
+            int value = opt.GetSelection();
+        }
+    }
 
     // ランダム全要素アクセス
     [Benchmark]
@@ -207,11 +231,35 @@ public class OptionAccessBenchmark
         }
     }
     [Benchmark]
-    public void RandoAllmAccessMixedOption()
+    public void RandomAllAccessMixedOption()
     {
         foreach (int key in randomAccessKey)
         {
             dynamic value = this.mixedOption[key].GetValue();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessMixedFixOption()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            int value = this.allOption.GetIOption(key).GetSelection();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessMixedFixExRImpV7100Option()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            int value = this.allOptionExR.GetIOption(key).GetSelection();
+        }
+    }
+    [Benchmark]
+    public void RandomAllAccessMixedFixExRImpV7130Option()
+    {
+        foreach (int key in randomAccessKey)
+        {
+            int value = this.allOptionExRNew.GetIOption(key).GetSelection();
         }
     }
 

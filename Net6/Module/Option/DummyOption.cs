@@ -37,7 +37,12 @@ public interface IDummyOption
     }
 }
 
-public interface IDummyFixedOption<T>
+public interface IFixedOption
+{
+    public int GetSelection();
+}
+
+public interface IDummyFixedOption<T> : IFixedOption
 {
     public void SetSelection(int newSelection);
     public T GetValue();
@@ -72,6 +77,8 @@ public abstract class DummyFixedTypeOption<T, Out> : IDummyFixedOption<Out>
     {
         this.OptionValue = value;
     }
+
+    public int GetSelection() => this.Selection;
 
     public void SetSelection(int newSelection)
     {

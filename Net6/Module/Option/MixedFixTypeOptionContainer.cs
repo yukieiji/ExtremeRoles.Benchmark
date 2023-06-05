@@ -9,6 +9,42 @@
         public MixedFixTypeOptionContainer()
         { }
 
+        public IEnumerable<IFixedOption> GetAllOption()
+        {
+            foreach (var opt in _intOptions.Values)
+            {
+                yield return opt;
+            }
+            foreach (var opt in _floatOptions.Values)
+            {
+                yield return opt;
+            }
+            foreach (var opt in _boolOptions.Values)
+            {
+                yield return opt;
+            }
+        }
+
+        public IFixedOption GetIOption(int id)
+        {
+            if (_intOptions.TryGetValue(id, out var intOption))
+            {
+                return intOption;
+            }
+            else if (_floatOptions.TryGetValue(id, out var floatOption))
+            {
+                return floatOption;
+            }
+            else if (_boolOptions.TryGetValue(id, out var boolOption))
+            {
+                return boolOption;
+            }
+            else
+            {
+                throw new ArgumentException("Invalided Option Id");
+            }
+        }
+
         public T Get<T>(int key)
         {
             IDummyFixedOption<T> option = null;

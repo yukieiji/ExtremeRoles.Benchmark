@@ -20,6 +20,29 @@ namespace NET6.Module.Option
         public ExRImpOptionContainerV7130()
         { }
 
+        public IEnumerable<IFixedOption> GetAllOption()
+        {
+            foreach (var (id, type) in _ids)
+            {
+                yield return type switch
+                {
+                    DType.Int => _intOptions[id],
+                    DType.Float => _floatOptions[id],
+                    DType.Bool => _boolOptions[id],
+                    _ => throw new InvalidOperationException(),
+                };
+            }
+        }
+
+        public IFixedOption GetIOption(int id)
+            => this._ids[id] switch
+            {
+                DType.Int => _intOptions[id],
+                DType.Float => _floatOptions[id],
+                DType.Bool => _boolOptions[id],
+                _ => throw new ArgumentException("Invalided Option Id"),
+            };
+
         public T Get<T>(int key)
         {
             if (typeof(T) == typeof(int))
